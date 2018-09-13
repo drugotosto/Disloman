@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  gateway-service:
+    image: drugotosto84/gateway-service:1.0.0-SNAPSHOT
+    container_name: gateway-service
+    ports:
+      - "8080:8080"
+    links:
+      - ingestion-service:ingestion-service
+#    environment:
+#      PROFILE: "default"
+
+  ingestion-service:
+    image: drugotosto84/ingestion-service:1.0.0-SNAPSHOT
+    container_name: ingestion-service
+    ports:
+      - "8090:8090"
+#    environment:
+#      PROFILE: "default"

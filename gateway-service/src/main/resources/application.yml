@@ -1,0 +1,31 @@
+spring:
+  application.name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          url-expression: "'http://'+serviceId"
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.loadbalancer: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#zuul:
+#  prefix: /api
+#  ignored-services: zuulservice
+#  routes:
+#    ingestionservice:
+#      path: /ingestion/**
+#      serviceId: ingestionservice
+#      stripPrefix: false
+
