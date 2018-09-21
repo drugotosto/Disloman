@@ -1,0 +1,12 @@
+spring:
+  application.name: oee-computation-service
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafkaserver:9092
+      bindings:
+        greetings-in:
+          destination: greetings
+          content-type: application/json
+#          group: oee-Computation-Group

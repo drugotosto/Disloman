@@ -1,5 +1,14 @@
 spring:
     application.name: ingestion-service
+    cloud:
+      stream:
+        kafka:
+          binder:
+            brokers: kafkaserver:9092
+        bindings:
+          greetings-out:
+            destination: greetings
+            content-type: application/json
 
 server:
-  port: 8090
+  port: 8080

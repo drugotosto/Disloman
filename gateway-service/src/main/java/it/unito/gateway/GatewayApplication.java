@@ -1,5 +1,6 @@
 package it.unito.gateway;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @EnableScheduling
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GatewayApplication {
-
-	private static final Log log = LogFactory.getLog(GatewayApplication.class);
 
 	@Autowired
 	private DiscoveryClient discoveryClient;

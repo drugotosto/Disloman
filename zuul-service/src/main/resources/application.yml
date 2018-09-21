@@ -1,0 +1,17 @@
+spring:
+  application.name: gatewayservice
+
+server:
+  port: 8080
+
+#zuul:
+#  routes:
+#    ingestionservice:
+#      path: '/ingestionservice/**'
+#      serviceId: 'ingestionservice'
+#      stripPrefix: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.loadbalancer: TRACE
