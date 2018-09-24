@@ -4,6 +4,6 @@ MAINTAINER Maurizio Ferrero <ferrero.maurizio84@gmail.com>
 ENV PORT 8080
 RUN mkdir -p /usr/local/disloman
 ARG JAR_FILE
-ADD target/${JAR_FILE} /usr/local/disloman/ingestionservice.jar
+ADD target/${JAR_FILE} /usr/local/disloman/ingestion-service.jar
 EXPOSE 8080
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/disloman/ingestionservice.jar"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/disloman/ingestion-service.jar"]

@@ -1,12 +1,39 @@
 spring:
   application.name: oee-computation-service
+  profiles:
+    active: compose
+
+# Kafka Configurations
+  cloud:
+    stream:
+      bindings:
+        greetings-in:
+          destination: greetings
+          content-type: application/json
+          group: oee-Computation-Group
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: compose
+
+# Kafka Configurations
   cloud:
     stream:
       kafka:
         binder:
           brokers: kafkaserver:9092
-      bindings:
-        greetings-in:
-          destination: greetings
-          content-type: application/json
-#          group: oee-Computation-Group
+
+---
+spring:
+  profiles: kub
+
+  # Kafka Configurations
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka-0.kafka-hs.disloman-local.svc.cluster.local:9093
+

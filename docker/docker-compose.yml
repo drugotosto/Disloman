@@ -6,8 +6,12 @@ services:
 #    container_name: gateway-service
 #    ports:
 #      - "8080:8080"
-#    links:
-#      - ingestion-service:ingestion-service
+
+#  zuul-service:
+#    image: drugotosto84/zuul-service:1.0.0-SNAPSHOT
+#    container_name: zuul-service
+#    ports:
+#      - "8080:8080"
 
   kafkaserver:
     image: wurstmeister/kafka:2.11-2.0.0
@@ -32,11 +36,13 @@ services:
   ingestion-service:
     image: drugotosto84/ingestion-service:1.0.0-SNAPSHOT
     container_name: ingestion-service
+    environment:
+      SPRING_PROFILES_ACTIVE: "compose"
     ports:
       - "8080:8080"
-#    environment:
-#      PROFILE: "default"
 
   oee-comutation-service:
       image: drugotosto84/oee-computation-service:1.0.0-SNAPSHOT
       container_name: oee-comutation-service
+      environment:
+        SPRING_PROFILES_ACTIVE: "compose"
