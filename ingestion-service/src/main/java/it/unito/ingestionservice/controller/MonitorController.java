@@ -18,10 +18,10 @@ public class MonitorController {
         this.greetingsSource = greetingsSource;
     }
 
-    @GetMapping("/messaggio/{value}")
-    public  String getMessaggio(@PathVariable String value) {
-        log.info("Messaggio passato: {}",value);
-        return "Messaggio passato: "+ value;
+    @GetMapping("/test/{messaggio}")
+    public  String getMessaggio(@PathVariable String messaggio) {
+        log.info("Messaggio passato: {}",messaggio);
+        return "Messaggio passato: "+ messaggio ;
     }
 
     @GetMapping("/greeting/{name}")

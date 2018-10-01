@@ -23,7 +23,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: kafkaserver:9092
+          brokers: kafka:9092
 
 ---
 spring:
@@ -34,4 +34,9 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: kafka-0.kafka-hs.disloman-local.svc.cluster.local:9093
+          brokers: bootstrap:9092
+
+
+
+
+

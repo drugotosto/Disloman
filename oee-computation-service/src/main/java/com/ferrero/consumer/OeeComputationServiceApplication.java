@@ -7,10 +7,10 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 
 @EnableBinding(GreetingsStreams.class)
 @SpringBootApplication
-public class ConsumerApplication
+public class OeeComputationServiceApplication
 {
 	public static void main(String[] args) {
-		SpringApplication.run(ConsumerApplication.class, args);
+		SpringApplication.run(OeeComputationServiceApplication.class, args);
 	}
 
 }
