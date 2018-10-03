@@ -1,11 +1,11 @@
 package it.unito.ingestionservice;
 
-import it.unito.ingestionservice.events.GreetingsStreams;
+import it.unito.ingestionservice.events.GreetingStreams;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-@EnableBinding(GreetingsStreams.class)
+@EnableBinding(GreetingStreams.class)
 @SpringBootApplication
 public class IngestionServiceApplication {
 

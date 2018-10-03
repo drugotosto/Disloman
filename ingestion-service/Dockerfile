@@ -6,4 +6,4 @@ RUN mkdir -p /usr/local/disloman
 ARG JAR_FILE
 ADD target/${JAR_FILE} /usr/local/disloman/ingestion-service.jar
 EXPOSE 8080
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/local/disloman/ingestion-service.jar"]
+ENTRYPOINT ["/usr/bin/java", "-Djava.security.egd=file:/dev/urandom", "-jar", "/usr/local/disloman/ingestion-service.jar"]

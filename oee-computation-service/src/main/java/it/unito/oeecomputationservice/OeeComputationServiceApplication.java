@@ -1,11 +1,11 @@
-package com.ferrero.consumer;
+package it.unito.oeecomputationservice;
 
-import com.ferrero.consumer.events.GreetingsStreams;
+import it.unito.oeecomputationservice.events.GreetingStreams;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-@EnableBinding(GreetingsStreams.class)
+@EnableBinding(GreetingStreams.class)
 @SpringBootApplication
 public class OeeComputationServiceApplication
 {

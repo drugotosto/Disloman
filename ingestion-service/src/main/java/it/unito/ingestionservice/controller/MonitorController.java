@@ -1,7 +1,7 @@
 package it.unito.ingestionservice.controller;
 
-import it.unito.ingestionservice.events.model.Greetings;
-import it.unito.ingestionservice.events.source.GreetingsSource;
+import it.unito.ingestionservice.events.model.Greeting;
+import it.unito.ingestionservice.events.source.GreetingSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/orchestra")
 public class MonitorController {
 
-    private final GreetingsSource greetingsSource;
+    private final GreetingSource greetingSource;
 
     @Autowired
-    public MonitorController(GreetingsSource greetingsSource) {
-        this.greetingsSource = greetingsSource;
+    public MonitorController(GreetingSource greetingSource) {
+        this.greetingSource = greetingSource;
     }
 
     @GetMapping("/test/{messaggio}")
@@ -30,11 +30,11 @@ public class MonitorController {
         log.info("Ricevuto richiesta di invio messaggio!");
         String message = "Hello "+ name +"!";
 
-        Greetings greetings = Greetings.builder()
+        Greeting greeting = Greeting.builder()
                 .message(message)
                 .timestamp(System.currentTimeMillis())
                 .build();
-        greetingsSource.sendGreeting(greetings);
+        greetingSource.sendGreeting(greeting);
     }
 
 }

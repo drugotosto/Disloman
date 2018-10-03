@@ -1,7 +1,7 @@
 spring:
   application.name: oee-computation-service
   profiles:
-    active: compose
+    active: default
 
 # Kafka Configurations
   cloud:
@@ -11,6 +11,15 @@ spring:
           destination: greetings
           content-type: application/json
           group: oee-Computation-Group
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+# Mongodb Configurations
+  data:
+    mongodb:
+      database: disloman
+      uri: mongodb://localhost:27017/
 
 server:
   port: 8080
@@ -25,6 +34,12 @@ spring:
       kafka:
         binder:
           brokers: kafka:9092
+
+# Mongodb Configurations
+  data:
+    mongodb:
+      database: disloman
+      uri: mongodb://mongo:27017/
 
 ---
 spring:

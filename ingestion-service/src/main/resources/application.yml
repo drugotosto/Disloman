@@ -1,7 +1,7 @@
 spring:
   application.name: ingestion-service
   profiles:
-    active: compose
+    active: default
 
 # Kafka Configurations
   cloud:
@@ -10,7 +10,9 @@ spring:
         greetings-out:
           destination: greetings
           content-type: application/json
-
+      kafka:
+        binder:
+          brokers: localhost:9092
 server:
   port: 8080
 

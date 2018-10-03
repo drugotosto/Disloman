@@ -1,4 +1,4 @@
-package com.ferrero.consumer.events;
+package it.unito.oeecomputationservice.events;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
@@ -8,7 +8,7 @@ import org.springframework.messaging.SubscribableChannel;
     Nel caso specifico viene definito un solo canale di input (associato ad uno specifico Kafka Topic condiviso con
     il producer) su cui rivcevere i messaggi
  */
-public interface GreetingsStreams {
+public interface GreetingStreams {
     String INPUT = "greetings-in";
 
     @Input(INPUT)

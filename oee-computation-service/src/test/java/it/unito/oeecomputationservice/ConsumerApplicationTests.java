@@ -1,4 +1,4 @@
-//package com.ferrero.consumer;
+//package it.unito.oeecomputationservice;
 //
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
