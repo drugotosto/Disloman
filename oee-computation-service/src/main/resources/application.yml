@@ -20,6 +20,9 @@ spring:
     mongodb:
       database: disloman
       uri: mongodb://localhost:27017/
+    # Spring DataRest Configuration
+    rest:
+      base-path: /ssb
 
 server:
   port: 8080

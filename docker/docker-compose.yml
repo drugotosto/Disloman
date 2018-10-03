@@ -86,6 +86,8 @@ services:
     container_name: oee-comutation-service
     environment:
       SPRING_PROFILES_ACTIVE: "compose"
+    ports:
+      - 8090:8080
 
 volumes:
   mongo_data_storage:
