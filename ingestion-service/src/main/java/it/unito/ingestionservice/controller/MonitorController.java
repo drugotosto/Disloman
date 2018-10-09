@@ -6,9 +6,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Slf4j
 @RestController
-@RequestMapping(value = "/orchestra")
+@CrossOrigin
+//@RequestMapping(value = "/orchestra")
 public class MonitorController {
 
     private final GreetingSource greetingSource;
@@ -18,23 +22,12 @@ public class MonitorController {
         this.greetingSource = greetingSource;
     }
 
-    @GetMapping("/test/{messaggio}")
-    public  String getMessaggio(@PathVariable String messaggio) {
-        log.info("Messaggio passato: {}",messaggio);
-        return "Messaggio passato: "+ messaggio ;
-    }
-
-    @GetMapping("/greeting/{name}")
-    public void publish(@PathVariable String name) {
-
-        log.info("Ricevuto richiesta di invio messaggio!");
-        String message = "Hello "+ name +"!";
-
-        Greeting greeting = Greeting.builder()
-                .message(message)
-                .timestamp(System.currentTimeMillis())
-                .build();
+    @PostMapping("/greeting")
+    public @ResponseBody Greeting createMessage(@RequestBody Greeting greeting) {
+        log.info("Ricevuto nuovo dato da Orchestra! Aggiungo il timestamp!");
+        greeting.setTimestamp(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
         greetingSource.sendGreeting(greeting);
+        return greeting;
     }
 
 }

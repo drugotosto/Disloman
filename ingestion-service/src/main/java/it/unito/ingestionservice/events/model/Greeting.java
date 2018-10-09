@@ -7,5 +7,5 @@ import lombok.Data;
 @Builder
 public class Greeting {
     private String message;
-    private Long timestamp;
+    private String timestamp;
 }

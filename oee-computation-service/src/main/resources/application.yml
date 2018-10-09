@@ -20,9 +20,9 @@ spring:
     mongodb:
       database: disloman
       uri: mongodb://localhost:27017/
-    # Spring DataRest Configuration
-    rest:
-      base-path: /ssb
+#    # Spring DataRest Configuration
+#    rest:
+#      base-path: /ssb
 
 server:
   port: 8080
@@ -55,6 +55,11 @@ spring:
         binder:
           brokers: bootstrap:9092
 
+  # Mongodb Configurations
+  data:
+    mongodb:
+      database: delete_me
+      uri: mongodb://mongo:27017/
 
 
 

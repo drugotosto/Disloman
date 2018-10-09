@@ -133,32 +133,32 @@
 						</buildArgs>
 					</configuration>
 				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>create-sources-jar</id>
-							<phase>deploy</phase>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>create-javadocs-jar</id>
-							<phase>deploy</phase>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+				<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-source-plugin</artifactId>-->
+					<!--<executions>-->
+						<!--<execution>-->
+							<!--<id>create-sources-jar</id>-->
+							<!--<phase>deploy</phase>-->
+							<!--<goals>-->
+								<!--<goal>jar</goal>-->
+							<!--</goals>-->
+						<!--</execution>-->
+					<!--</executions>-->
+				<!--</plugin>-->
+				<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-javadoc-plugin</artifactId>-->
+					<!--<executions>-->
+						<!--<execution>-->
+							<!--<id>create-javadocs-jar</id>-->
+							<!--<phase>deploy</phase>-->
+							<!--<goals>-->
+								<!--<goal>jar</goal>-->
+							<!--</goals>-->
+						<!--</execution>-->
+					<!--</executions>-->
+				<!--</plugin>-->
 			</plugins>
 		</pluginManagement>
 	</build>

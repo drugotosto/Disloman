@@ -20,7 +20,9 @@ public class MessageHandler {
     public void handleGreetings(@Payload Greeting greeting) {
 
         log.info("Il messaggio ricevuto e: {}", greeting);
-        greetingMongoRepository.save(greeting);
+        Greeting newGreeting = new Greeting(greeting.getId(),greeting.getMessage()+" MODIFIED", greeting
+                .getTimestamp());
+        greetingMongoRepository.save(newGreeting);
         log.info("Ho eseguito il salvataggio su MongoDB");
     }
 }

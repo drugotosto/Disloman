@@ -11,9 +11,9 @@ public class Greeting {
     @Id
     private String id;
     private String message;
-    private Long timestamp;
+    private String timestamp;
 
-    public Greeting(String id, String message, Long timestamp) {
+    public Greeting(String id, String message, String timestamp) {
         this.id = id;
         this.message = message;
         this.timestamp = timestamp;

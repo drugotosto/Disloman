@@ -58,7 +58,8 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - mongo_data_storage:/data/db:rw
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
 #    environment:
 #      MONGO_INITDB_ROOT_USERNAME: root
 #      MONGO_INITDB_ROOT_PASSWORD: example
@@ -90,9 +91,5 @@ services:
       - 8090:8080
 
 volumes:
-  mongo_data_storage:
-    driver: local
-    driver_opts:
-      type: none
-      device: /mongo-data
-      o: bind
+  mongodb_data:
+  mongodb_config:
