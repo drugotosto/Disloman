@@ -22,7 +22,7 @@ public class MonitorController {
         this.greetingSource = greetingSource;
     }
 
-    @PostMapping("/greeting")
+    @PostMapping("/greetings")
     public @ResponseBody Greeting createMessage(@RequestBody Greeting greeting) {
         log.info("Ricevuto nuovo dato da Orchestra! Aggiungo il timestamp!");
         greeting.setTimestamp(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
