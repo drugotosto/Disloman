@@ -3,6 +3,9 @@ spring:
   profiles:
     active: default
 
+server:
+  port: 8080
+
 # Kafka Configurations
   cloud:
     stream:
@@ -13,8 +16,18 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
-server:
-  port: 8080
+
+# Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
+management:
+  endpoint:
+    health:
+      show-details: always
+
+# Spring Boot Actuator /info endpoint configuration (Informazioni customizzate da visualizzare quanto di ispeziona /info endpoint)
+info:
+  app:
+    name: Ingestion Micorservice
+    description: Microservizio che si occupa di eseguire la dataIngestion/aggregation!
 
 ---
 spring:
