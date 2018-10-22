@@ -1,10 +1,5 @@
 spring:
   application.name: oee-computation-service
-  profiles:
-    active: default
-
-server:
-  port: 8080
 
 # Kafka Configurations
   cloud:
@@ -16,16 +11,10 @@ server:
           group: oee-Computation-Group
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:9092
 
-# Mongodb Configurations
-  data:
-    mongodb:
-      database: disloman
-      uri: mongodb://localhost:27017/
-#    # Spring DataRest Configuration
-#    rest:
-#      base-path: /ssb
+server:
+  port: 8080
 
 # Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
 management:
@@ -43,34 +32,20 @@ info:
 spring:
   profiles: compose
 
-# Kafka Configurations
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: kafka:9092
-
 # Mongodb Configurations
   data:
     mongodb:
-      database: disloman
+      database: disloman_docker
       uri: mongodb://mongo:27017/
 
 ---
 spring:
   profiles: kub
 
-  # Kafka Configurations
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: kafka:9092
-
   # Mongodb Configurations
   data:
     mongodb:
-      database: delete_me
+      database: disloman_kubernetes
       uri: mongodb://mongo:27017/
 
 

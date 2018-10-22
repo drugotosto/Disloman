@@ -1,10 +1,5 @@
 spring:
   application.name: ingestion-service
-  profiles:
-    active: default
-
-server:
-  port: 8080
 
 # Kafka Configurations
   cloud:
@@ -15,7 +10,10 @@ server:
           content-type: application/json
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:9092
+
+server:
+  port: 8080
 
 # Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
 management:
@@ -33,23 +31,11 @@ info:
 spring:
   profiles: compose
 
-# Kafka Configurations
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: kafka:9092
 
 ---
 spring:
   profiles: kub
 
-  # Kafka Configurations
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: kafka:9092
 
 
 
