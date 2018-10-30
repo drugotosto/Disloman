@@ -1,17 +1,25 @@
 spring:
-  application.name: gatewayservice
+  application:
+    name: gateway
 
 server:
   port: 8080
-
-#zuul:
-#  routes:
-#    ingestionservice:
-#      path: '/ingestionservice/**'
-#      serviceId: 'ingestionservice'
-#      stripPrefix: true
 
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.loadbalancer: TRACE
+
+zuul:
+  prefix: "disloman-gateway/api/"
+  ignored-services: "mongo, mongodns, zookeeper, zoodns"
+  routes:
+    ingestionservice:
+      path: "orchestra/**"
+      serviceId: "ingestion"
+      stripPrefix: true
+    oeecomputationservice:
+      path: "ssb/**"
+      serviceId: "oee-computation"
+      stripPrefix: true
+

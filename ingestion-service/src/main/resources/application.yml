@@ -1,5 +1,6 @@
 spring:
-  application.name: ingestion-service
+  application:
+    name: ingestion
 
 # Kafka Configurations
   cloud:

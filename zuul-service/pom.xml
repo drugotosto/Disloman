@@ -11,10 +11,9 @@
 
 	<artifactId>zuul-service</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-
 	<packaging>jar</packaging>
-	<name>zuul-service</name>
 
+	<name>zuul-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -22,6 +21,16 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-netflix-dependencies</artifactId>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -32,13 +41,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-kubernetes-discovery</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-kubernetes-ribbon</artifactId>
-		</dependency>
 		<!--<dependency>-->
-		<!--<groupId>org.springframework.cloud</groupId>-->
-		<!--<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+			<!--<groupId>org.springframework.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-kubernetes-ribbon</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
 		<!--</dependency>-->
 	</dependencies>
 

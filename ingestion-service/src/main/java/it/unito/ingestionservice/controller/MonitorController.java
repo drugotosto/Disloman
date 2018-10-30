@@ -12,7 +12,7 @@ import java.util.Date;
 @Slf4j
 @RestController
 @CrossOrigin
-//@RequestMapping(value = "/orchestra")
+//@RequestMapping(value = "orchestra")
 public class MonitorController {
 
     private final GreetingSource greetingSource;
