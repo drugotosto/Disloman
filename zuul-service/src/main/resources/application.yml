@@ -12,16 +12,7 @@ logging:
 
 zuul:
   ignored-services: "*"
-#  prefix: "disloman-gateway/api/"
   routes:
     ingestion: 'orchestra/**'
     oee-computation: 'ssb/**'
-#    ingestionservice:
-#      path: 'orchestra/**'
-#      serviceId: ingestion
-#      stripPrefix: true
-#    oeecomputationservice:
-#      path: 'ssb/**'
-#      serviceId: oee-computation
-#      stripPrefix: true
 
