@@ -25,7 +25,6 @@
 	</developers>
 
 	<modules>
-		<!--<module>gateway-service</module>-->
 		<module>zuul-service</module>
 		<module>ingestion-service</module>
 		<module>oee-computation-service</module>
