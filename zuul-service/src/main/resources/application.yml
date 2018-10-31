@@ -11,15 +11,17 @@ logging:
     org.springframework.cloud.loadbalancer: TRACE
 
 zuul:
-  prefix: "disloman-gateway/api/"
-  ignored-services: "mongo, mongodns, zookeeper, zoodns"
+  ignored-services: "*"
+#  prefix: "disloman-gateway/api/"
   routes:
-    ingestionservice:
-      path: "orchestra/**"
-      serviceId: "ingestion"
-      stripPrefix: true
-    oeecomputationservice:
-      path: "ssb/**"
-      serviceId: "oee-computation"
-      stripPrefix: true
+    ingestion: 'orchestra/**'
+    oee-computation: 'ssb/**'
+#    ingestionservice:
+#      path: 'orchestra/**'
+#      serviceId: ingestion
+#      stripPrefix: true
+#    oeecomputationservice:
+#      path: 'ssb/**'
+#      serviceId: oee-computation
+#      stripPrefix: true
 
