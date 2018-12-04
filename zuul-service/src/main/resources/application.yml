@@ -13,8 +13,18 @@ logging:
 zuul:
   ignored-services: "*"
   routes:
-    ingestion: 'orchestra/**'
-    oee-computation: 'ssb/**'
+    ingestion: '/api/orchestra/**'
+    oee-computation: 'api/ssb/**'
+#    autentication: 'auth/oauth/**'
 
+# Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
+management:
+  endpoint:
+    health:
+      show-details: always
 
-
+# Spring Boot Actuator /info endpoint configuration (Informazioni customizzate da visualizzare quanto di ispeziona /info endpoint)
+info:
+  app:
+    name: Gateway Micorservice
+    description: Microservizio che implementa il Zuul API Gateway

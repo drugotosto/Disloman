@@ -1,4 +1,4 @@
-package it.unito.ingestionservice.controller;
+package it.unito.ingestionservice.controllers;
 
 import it.unito.ingestionservice.events.model.Greeting;
 import it.unito.ingestionservice.events.source.GreetingSource;
