@@ -1,4 +1,4 @@
-    FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk-alpine
 MAINTAINER Maurizio Ferrero <ferrero.maurizio84@gmail.com>
 
 ENV PORT 8080

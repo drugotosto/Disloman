@@ -10,15 +10,12 @@ logging:
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.loadbalancer: TRACE
 
-zuul:
-  ignored-services: "*"
-  routes:
-    ingestion: '/api/orchestra/**'
-    oee-computation: 'api/ssb/**'
-#    autentication: 'auth/oauth/**'
-
 # Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
 management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
   endpoint:
     health:
       show-details: always
@@ -28,3 +25,26 @@ info:
   app:
     name: Gateway Micorservice
     description: Microservizio che implementa il Zuul API Gateway
+
+---
+spring:
+  profiles: compose
+
+zuul:
+  routes:
+    ingestion:
+      path: '/api/orchestra/**'
+      url: 'http://ingestion:8080'
+    oee-comutation:
+      path: '/api/ssb/**'
+      url: 'http://oee-comutation:8080'
+
+---
+spring:
+  profiles: kub
+
+zuul:
+  ignored-services: "*"
+  routes:
+    ingestion: '/api/orchestra/**'
+    oee-computation: 'api/ssb/**'
