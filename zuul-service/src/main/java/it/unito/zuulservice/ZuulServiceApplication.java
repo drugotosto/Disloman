@@ -25,13 +25,29 @@ public class ZuulServiceApplication implements CommandLineRunner{
 		SpringApplication.run(ZuulServiceApplication.class, args);
 	}
 
-	// CORS Configuration (Abilita tutto)
+	/**
+	 * 	Definisce la CORS Configuration indicando le policies che definiscono quali request client accettare.
+	 * 	Tutto questo si traduce in una serie di HEADERS restituiti dal server all'interno della risposta HTTP.
+	 * 	Al momento le policies abilitano tutte le possibili richieste da parte di qualisiasi client.
+	 */
 	@Bean
 	public CorsFilter corsFilter() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		final CorsConfiguration config = new CorsConfiguration();
+		/*
+			CORS Access-Control-Allow-Credentials HEADER
+			Indica se il server è in grado o meno di gestire l'autenticazione tramite cookie
+		 */
 		config.setAllowCredentials(true);
+		/*
+			CORS Access-Control-Allow-Origin HEADER
+			Indica quali sono i client-domains (confronto con l'Origin HEADER della Request) che hanno accesso alle risorse del server
+		 */
 		config.addAllowedOrigin("*");
+		/*
+			CORS Access-Control-Allow-Headers
+			Definsice una lista di Custom Request Headers che il server è disposto ad accettare
+		 */
 		config.addAllowedHeader("*");
 //		config.addAllowedMethod("OPTIONS");
 //		config.addAllowedMethod("HEAD");
@@ -40,6 +56,10 @@ public class ZuulServiceApplication implements CommandLineRunner{
 //		config.addAllowedMethod("POST");
 //		config.addAllowedMethod("DELETE");
 //		config.addAllowedMethod("PATCH");
+		/*
+			CORS Access-Control-Allow-Methods
+			Fornisce una lista dei HTTP Request methods accettate dal server
+		 */
 		config.addAllowedMethod("*");
 		source.registerCorsConfiguration("/**", config);
 		return new CorsFilter(source);

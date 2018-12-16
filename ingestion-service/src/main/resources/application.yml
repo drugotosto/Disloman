@@ -13,9 +13,6 @@ spring:
         binder:
           brokers: kafka:9092
 
-server:
-  port: 8080
-
 # Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
 management:
   endpoint:
@@ -28,10 +25,12 @@ info:
     name: Ingestion Micorservice
     description: Microservizio che si occupa di eseguire la dataIngestion/aggregation!
 
+server:
+  port: 8080
+
 ---
 spring:
   profiles: compose
-
 
 ---
 spring:

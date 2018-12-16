@@ -9,6 +9,7 @@ logging:
   level:
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.loadbalancer: TRACE
+    org.springframework.web: info
 
 # Spring Boot Actuator "/health" endpoint configuration (Mostra dettagli aggiuntivi quando si ispeziona /health endpoint)
 management:
@@ -25,6 +26,7 @@ info:
   app:
     name: Gateway Micorservice
     description: Microservizio che implementa il Zuul API Gateway
+
 
 ---
 spring:
